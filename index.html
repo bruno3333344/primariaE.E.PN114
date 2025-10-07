@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E.E.P N°114 - Portal Escolar</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- SDK de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🏫 E.E.P N°114</h1>
+    <nav>
+      <button onclick="mostrarSeccion('inicio')">Inicio</button>
+      <button onclick="mostrarSeccion('eventos')">Eventos</button>
+      <button onclick="mostrarSeccion('docentes')">Docentes</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="login">
+      <h2>Ingreso administrador</h2>
+      <input type="password" id="adminPass" placeholder="Contraseña" />
+      <button onclick="login()">Ingresar</button>
+    </section>
+
+    <section id="inicio" class="oculto">
+      <h2>Comunicados</h2>
+      <div id="listaComunicados"></div>
+      <div id="formComunicado" class="adminOnly oculto">
+        <textarea id="nuevoComunicado" placeholder="Escribe un comunicado..."></textarea>
+        <button onclick="agregarComunicado()">Agregar comunicado</button>
+      </div>
+    </section>
+
+    <section id="eventos" class="oculto">
+      <h2>Eventos</h2>
+      <div id="listaEventos"></div>
+      <div id="formEvento" class="adminOnly oculto">
+        <input type="text" id="nuevoEvento" placeholder="Título del evento" />
+        <button onclick="agregarEvento()">Agregar evento</button>
+      </div>
+    </section>
+
+    <section id="docentes" class="oculto">
+      <h2>Docentes</h2>
+      <div id="listaDocentes"></div>
+      <div id="formDocente" class="adminOnly oculto">
+        <input type="text" id="nombreDocente" placeholder="Nombre del docente" />
+        <button onclick="agregarDocente()">Agregar docente</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 E.E.P N°114 - Portal Escolar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
